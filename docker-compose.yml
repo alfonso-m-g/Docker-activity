@@ -1,0 +1,22 @@
+version: '1.1'
+services:
+  proxy:
+    build: 
+      context: ./proxy
+    ports:
+      - "80:80"
+    networks:
+      - net
+  frontend:
+    build: 
+      context: ./frontend
+    networks:
+      - net
+  backend:
+    build: 
+      context: ./backend
+    networks:
+      - net
+
+networks:
+  net:
